@@ -8,7 +8,7 @@ const CaptianSignup = () => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [color, setColor] = useState("");
+  const [color, setColor] = useState("black");
   const [plate, setPlate] = useState("");
   const [capacity, setCapacity] = useState("");
   const [vehicleType, setVehicleType] = useState("");
@@ -139,6 +139,8 @@ const CaptianSignup = () => {
                 className="bg-[#eeeeee] mb-5 rounded px-4 py-2 border w-full text-lg placeholder:text-base"
                 type="number"
                 value={capacity}
+                min={1}
+                max={4}
                 onChange={(e) => setCapacity(e.target.value)}
                 required
                 placeholder="Capacity"
