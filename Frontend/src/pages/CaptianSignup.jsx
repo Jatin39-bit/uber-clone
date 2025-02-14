@@ -77,7 +77,7 @@ const CaptianSignup = () => {
               className="bg-[#eeeeee] rounded px-4 py-2 border w-1/2 text-lg placeholder:text-base"
               type="text"
               value={firstName}
-              min={3}
+              minLength={3}
               onChange={(e) => setFirstName(e.target.value)}
               required
               placeholder="First Name"
@@ -86,7 +86,7 @@ const CaptianSignup = () => {
               className="bg-[#eeeeee] rounded px-4 py-2 border w-1/2 text-lg placeholder:text-base"
               type="text"
               value={lastName}
-              min={3}
+              minLength={3}
               onChange={(e) => setLastName(e.target.value)}
               required
               placeholder="Last Name"
@@ -108,7 +108,7 @@ const CaptianSignup = () => {
             className="bg-[#eeeeee] mb-5 rounded px-4 py-2 border w-full text-lg placeholder:text-base"
             type="password"
             value={password}
-            min={8}
+            minLength={8}
             onChange={(e) => setPassword(e.target.value)}
             required
             placeholder="Password"
@@ -131,6 +131,8 @@ const CaptianSignup = () => {
                 className="bg-[#eeeeee] mb-5 rounded px-4 py-2 border w-full text-lg placeholder:text-base capitalize"
                 type="text"
                 value={plate}
+                minLength={10}
+                maxLength={10}
                 onChange={(e) => setPlate(e.target.value.toUpperCase())}
                 required
                 placeholder="Plate"
