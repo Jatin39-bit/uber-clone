@@ -62,6 +62,7 @@ const UserSignup = () => {
               className="bg-[#eeeeee] rounded px-4 py-2 border w-1/2 text-lg placeholder:text-base"
               type="text"
               value={firstName}
+              min={3}
               onChange={(e) => setFirstName(e.target.value)}
               required
               placeholder="First Name"
@@ -70,6 +71,7 @@ const UserSignup = () => {
               className="bg-[#eeeeee] rounded px-4 py-2 border w-1/2 text-lg placeholder:text-base"
               type="text"
               value={lastName}
+              min={3}
               onChange={(e) => setLastName(e.target.value)}
               required
               placeholder="Last Name"
@@ -89,6 +91,7 @@ const UserSignup = () => {
             className="bg-[#eeeeee] mb-5 rounded px-4 py-2 border w-full text-lg placeholder:text-base"
             type="password"
             value={password}
+            min={8}
             onChange={(e) => setPassword(e.target.value)}
             required
             placeholder="Password"
