@@ -55,6 +55,7 @@ const UserLogin = () => {
             onChange={(e) => setPassword(e.target.value)}
             name="password"
             type="password"
+            minLength={6}
             required
             placeholder="Password"
           />
