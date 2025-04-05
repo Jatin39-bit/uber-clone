@@ -5,13 +5,8 @@ const server = http.createServer(app)
 const {initializeSocket}=require('./socket')
 const cors=require('cors')
 
-app.use(cors({
-    origin:['https://uber-clone-backend.vercel.app','https://uber-clone-eight-eta.vercel.app'],
-    methods:['GET','POST'],
-    allowedHeaders:['Authorization'],
-    credentials:true
-}))
-
+// Move CORS configuration to app.js to avoid duplication
+// CORS is already configured in app.js but with different settings
 
 initializeSocket(server)
 

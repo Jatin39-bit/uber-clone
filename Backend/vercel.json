@@ -8,8 +8,17 @@
     ],
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/socket.io/(.*)",
         "dest": "server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "server.js",
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept"
+        }
       }
     ]
   }

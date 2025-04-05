@@ -12,7 +12,12 @@ const rideRoutes=require('./routes/ride.routes')
 
 connectToDb()
 
-app.use(cors())
+app.use(cors({
+    origin: ['https://uber-clone-backend.vercel.app', 'https://uber-clone-eight-eta.vercel.app'],
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}))
 app.use(express.json())
 app.use(cookie())
 app.use(express.urlencoded({ extended: true }))

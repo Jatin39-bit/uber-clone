@@ -7,9 +7,13 @@ let io;
 function initializeSocket(server) {
     io = socketIo(server, {
         cors: {
-            origin: ['https://uber-clone-backend.vercel.app','https://uber-clone-eight-eta.vercel.app'],
-            methods: ['GET', 'POST']
-        }
+            origin: ['https://uber-clone-backend.vercel.app', 'https://uber-clone-eight-eta.vercel.app'],
+            methods: ['GET', 'POST', 'OPTIONS'],
+            allowedHeaders: ['Content-Type', 'Authorization'],
+            credentials: true
+        },
+        transports: ['polling', 'websocket'],
+        allowEIO3: true
     })
 
     io.on('connection', (socket) => {
